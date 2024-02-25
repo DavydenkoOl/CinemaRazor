@@ -1,0 +1,52 @@
+﻿@page
+@model CinemaRazor.Pages.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<div id="delete_div">
+
+    <h1>Удалить</h1>
+
+    <h3>Вы действительно хотить удалить фильм @Html.DisplayFor(model => model.kino.Title)?</h3>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.kino.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kino.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.kino.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kino.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.kino.Director)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kino.Director)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.kino.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.kino.Description)
+        </dd>
+
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="kino.Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" />
+    </form>
+    <div style="width:100%; background-color:aliceblue; margin-top:200px">
+        <a asp-page="Index" style="float: right; color: #FF7373; text-decoration: none;font-size:20px;font-style:italic; font-weight:800">На главную</a>
+    </div>
+
+</div>
+<div style="height:100px">
+</div>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CinemaRazor</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CinemaRazor.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header style="padding: 20px; width:1450px; height:150px; display: flex; justify-content: space-between; ">
+        <img src="/images/3em.png" />
+        <h1 style="width: 95%;margin-left: 5px;color: #240e67">Кинчики</h1>
+
+
+
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer style="font-size:18px;color: #fff;padding: 20px; width:1450px; height:30px; display: flex; justify-content: space-between">
+        <div class="container">
+            &copy; 2023 - Kinosal - Autor: Davydenko Oleksandr
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

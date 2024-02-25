@@ -1,0 +1,53 @@
+﻿@page
+@model CinemaRazor.Pages.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div style="margin:auto; width: 800px; padding: 5px; border-radius: 10px;height:45px;">
+    <h2 style="color: #FF7373; font-style:italic">Редактировать</h2>
+</div>
+
+@* <h4>Kino</h4> *@
+<div id="edit_div">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="kino.Id" />
+                <div class="form-group">
+                    <label class="control-label" style="color: #FF7373;font-style:italic; font-size:20px;font-weight:800">Название</label>
+                    <input asp-for="kino.Title" class="form-control" />
+                    <span asp-validation-for="kino.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="color: #FF7373;font-style:italic; font-size:20px;font-weight:800" class="control-label">Жанр</label>
+                    <input asp-for="kino.Genre" class="form-control" />
+                    <span asp-validation-for="kino.Genre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="color: #FF7373;font-style:italic; font-size:20px;font-weight:800" class="control-label">Режиссёр</label>
+                    <input asp-for="kino.Director" class="form-control" />
+                    <span asp-validation-for="kino.Director" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="color: #FF7373;font-style:italic; font-size:20px;font-weight:800" class="control-label">Описание</label>
+                    <input asp-for="kino.Description" class="form-control" />
+                    <span asp-validation-for="kino.Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="color: #FF7373;font-style:italic; font-size:20px;font-weight:800" class="control-label">Постер</label>
+                    <input type="file" name="uploadedFile" style="color:red" />
+                    <input type="hidden" asp-for="kino.Poster" />
+                </div>
+
+                <div class="form-group" style="margin-top:40px">
+                    <input type="submit" value="Сохранить" class="btn btn-primary" style=" background-color:#240e67; border: none" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div style="margin:auto; width: 800px; padding: 5px;background-color:#240e67; border-radius: 10px;margin-top:25px;height:45px; box-shadow: 4px 8px 8px rgba(124,9, 186, 0.5);">
+    <a asp-page="Index" style="float: right; color: #FF7373; text-decoration: none;font-size:20px;font-style:italic; font-weight:800">На главную</a>
+</div>
